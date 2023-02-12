@@ -11,6 +11,12 @@ public interface ProjectConfig extends Config {
 
     @Key("baseUrl")
     String baseUrl();
+    @Key("browser")
+    String browser();
+    @Key("browserSize")
+    String browserSize();
+    @Key("browserVersion")
+    String browserVersion();
 
 
 

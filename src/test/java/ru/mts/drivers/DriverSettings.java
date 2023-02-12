@@ -6,11 +6,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class DriverSettings {
     public static void configure(){
-        Configuration.holdBrowserOpen = true;
         Configuration.baseUrl = Project.config.baseUrl();
-        Configuration.browserSize = System.getProperty("browserSize", "1920x1080");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion", "100");
+        Configuration.browserSize = Project.config.browserSize();
+        Configuration.browser = Project.config.browser();
+        Configuration.browserVersion = Project.config.browserVersion();
 
 
         Configuration.remote = System.getProperty("remoteUrl", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
