@@ -7,9 +7,6 @@ import org.junit.jupiter.api.Test;
 import ru.mts.pages.MainPage;
 import ru.mts.pages.SearchPage;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
 
 public class SearchProductTest extends TestBase {
@@ -18,7 +15,7 @@ public class SearchProductTest extends TestBase {
 
     @Test
     @Severity(SeverityLevel.NORMAL)
-    @DisplayName("Поиск")
+    @DisplayName("Поиск по сайту")
     public void testLogo() {
         step("Открыть персональную страницу МТС", () -> {
             mainPage.personalPage();

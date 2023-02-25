@@ -12,7 +12,10 @@ public class MainPage {
             headerLogo = $(".header__logo[alt=\"МТС\""),
             bestsellersMenu = $(".subscribes-and-services__cards-wrapper"),
             cardContent = $(".card__left-content"),
-            cardContentAccess = $(".mts16-footer__to-bottom-content");
+            cardContentAccess = $(".mts16-footer__to-bottom-content"),
+            mainMenuCombo = $(".main-menu__link"),
+            mainMenuPrivilege = $(".header__submenu-inner"),
+            loaderSlider=$(".cover-slider__loader");
 
     public MainPage personalPage() {
         open("/personal");
@@ -28,12 +31,27 @@ public class MainPage {
         bestsellersMenu.shouldHave(text(hit));
         return this;
     }
+
     public MainPage cardMtsAccess() {
         cardContent.click();
         return this;
     }
+
     public MainPage checkMtsAccess() {
         cardContentAccess.shouldHave(text("МТС Доступ"));
+        return this;
+    }
+    public MainPage MenuCombo() {
+        mainMenuCombo.click();
+        return this;
+    }
+    public MainPage checkMenuPrivilege() {
+        mainMenuPrivilege.shouldHave(text("Программы привилегий"));
+        return this;
+    }
+    public MainPage checkLoaderSlider() {
+        loaderSlider.click();
+        loaderSlider.shouldBe(appear);
         return this;
     }
 

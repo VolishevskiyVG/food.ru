@@ -11,8 +11,7 @@ import ru.mts.pages.MainPage;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byAttribute;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.files.DownloadActions.click;
 import static io.qameta.allure.Allure.step;
 
@@ -38,7 +37,7 @@ public class MainPageContentTests extends TestBase {
     @DisplayName("Проверить что на главной странице присутствуют хиты продаж")
     @ValueSource(strings = {"МТС Доступ", "НЕТАРИФ", "Тарифище"})
     @ParameterizedTest(name = "\"{0}\"")
-    public void testHit(String hit){
+    public void testHit(String hit) {
         step("Открыть персональную страницу МТС", () -> {
             mainPage.personalPage();
         });
@@ -47,8 +46,8 @@ public class MainPageContentTests extends TestBase {
         });
 
 
-
     }
+
     @Test
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверить, что происходит переход в Мтс Доступ из главной страницы")
@@ -61,6 +60,37 @@ public class MainPageContentTests extends TestBase {
         });
         step("Проверить, что осуществился переход на МТС Доступ", () -> {
             mainPage.checkMtsAccess();
+        });
+
+
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Отображение Программы привилегий в выпадающем списке Комбо ")
+    public void menuPrivilege() {
+        step("Открыть персональную страницу МТС", () -> {
+            mainPage.personalPage();
+        });
+        step("Нажать на выпадающий список Комбо", () -> {
+            mainPage.MenuCombo();
+        });
+        step("Проверить, что отображается Программы привилегий", () -> {
+            mainPage.checkMenuPrivilege();
+        });
+
+
+    }
+
+    @Test
+    @Severity(SeverityLevel.NORMAL)
+    @DisplayName("Проверить, что происходит перелистывание контента по слайдеру")
+    public void clickCover() {
+        step("Открыть персональную страницу МТС", () -> {
+            mainPage.personalPage();
+        });
+        step("Проверка работы кнопки слайдера", () -> {
+            mainPage.checkLoaderSlider();
         });
 
 
