@@ -17,6 +17,8 @@ public interface ProjectConfig extends Config {
     String browserSize();
     @Key("browserVersion")
     String browserVersion();
+    @Key("webRemoteUrl")
+    String getRemoteUrl();
 
 
 
