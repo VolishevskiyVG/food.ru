@@ -1,7 +1,7 @@
 package ru.mts.drivers;
 
 import com.codeborne.selenide.Configuration;
-import ru.mts.config.Project;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 //public class DriverSettings {
