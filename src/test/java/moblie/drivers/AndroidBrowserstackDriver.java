@@ -3,9 +3,8 @@ package moblie.drivers;
 import com.codeborne.selenide.WebDriverProvider;
 
 
-import config.ProjectConfig;
+import config.Project;
 import lombok.SneakyThrows;
-import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +17,7 @@ import java.net.URL;
 //import static config.Config.CONFIG;
 
 public class AndroidBrowserstackDriver implements WebDriverProvider {
-    static ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
+
 
     @SneakyThrows
     @Override
@@ -26,16 +25,16 @@ public class AndroidBrowserstackDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
-        ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
-
-        mutableCapabilities.setCapability("browserstack.user", config.username());
-        mutableCapabilities.setCapability("browserstack.key", config.password());
 
 
-        mutableCapabilities.setCapability("app", config.appAndroid());
+        mutableCapabilities.setCapability("browserstack.user", Project.config.username());
+        mutableCapabilities.setCapability("browserstack.key", Project.config.password());
 
-        mutableCapabilities.setCapability("device", config.deviceAndroid());
-        mutableCapabilities.setCapability("os_version", config.os_versionAndroid());
+
+        mutableCapabilities.setCapability("app", Project.config.appAndroid());
+
+        mutableCapabilities.setCapability("device", Project.config.deviceAndroid());
+        mutableCapabilities.setCapability("os_version", Project.config.os_versionAndroid());
 
 
         mutableCapabilities.setCapability("project", "First Java Project");
@@ -48,7 +47,7 @@ public class AndroidBrowserstackDriver implements WebDriverProvider {
 
     private URL getRemoteWebDriverUrl() {
         try {
-            return new URL(config.url());
+            return new URL(Project.config.url());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

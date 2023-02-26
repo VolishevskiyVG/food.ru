@@ -1,6 +1,7 @@
 package moblie.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.Project;
 import config.ProjectConfig;
 import lombok.SneakyThrows;
 import org.aeonbits.owner.ConfigFactory;
@@ -13,10 +14,9 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-//import static config.Config.CONFIG;
 
 public class IosBrowserstackDriver implements WebDriverProvider {
-    static ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
+
 
 
     @SneakyThrows
@@ -25,17 +25,17 @@ public class IosBrowserstackDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
-        ProjectConfig config = ConfigFactory.create(ProjectConfig.class, System.getProperties());
-
-        mutableCapabilities.setCapability("browserstack.user", config.username());
-        mutableCapabilities.setCapability("browserstack.key", config.password());
 
 
-        mutableCapabilities.setCapability("app", config.appIos());
+        mutableCapabilities.setCapability("browserstack.user", Project.config.username());
+        mutableCapabilities.setCapability("browserstack.key", Project.config.password());
 
 
-        mutableCapabilities.setCapability("device", config.deviceIos());
-        mutableCapabilities.setCapability("os_version", config.os_versionIos());
+        mutableCapabilities.setCapability("app", Project.config.appIos());
+
+
+        mutableCapabilities.setCapability("device", Project.config.deviceIos());
+        mutableCapabilities.setCapability("os_version", Project.config.os_versionIos());
 
 
         // Set other BrowserStack capabilities
@@ -49,7 +49,7 @@ public class IosBrowserstackDriver implements WebDriverProvider {
 
     private URL getRemoteWebDriverUrl() {
         try {
-            return new URL(config.url());
+            return new URL(Project.config.url());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

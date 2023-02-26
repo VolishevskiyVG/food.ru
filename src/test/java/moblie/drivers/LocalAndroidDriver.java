@@ -1,10 +1,11 @@
 package moblie.drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.ProjectConfig;
+import config.Project;
+
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
-import org.aeonbits.owner.ConfigFactory;
+
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 
@@ -19,11 +20,11 @@ import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
 
 public class LocalAndroidDriver  implements WebDriverProvider {
-    static ProjectConfig config = ConfigFactory.create(ProjectConfig.class);
+
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config.localUrl());
+            return new URL(Project.config.localUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
@@ -35,12 +36,12 @@ public class LocalAndroidDriver  implements WebDriverProvider {
         options.merge(capabilities);
 
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
-                .setPlatformName(config.localPlatformName())
-                .setDeviceName(config.localDevice())
-                .setPlatformVersion(config.localVersion())
+                .setPlatformName(Project.config.localPlatformName())
+                .setDeviceName(Project.config.localDevice())
+                .setPlatformVersion(Project.config.localVersion())
                 .setApp(getAppPath())
-                .setAppPackage(config.localAppPackage())
-                .setAppActivity(config.localAppActivity());
+                .setAppPackage(Project.config.localAppPackage())
+                .setAppActivity(Project.config.localAppActivity());
 
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
@@ -48,7 +49,7 @@ public class LocalAndroidDriver  implements WebDriverProvider {
     private String getAppPath() {
         String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/" +
                 "releases/download/latest/app-alpha-universal-release.apk";
-        String appPath = config.localAppPath();
+        String appPath = Project.config.localAppPath();
 
         File app = new File(appPath);
         if (!app.exists()) {
