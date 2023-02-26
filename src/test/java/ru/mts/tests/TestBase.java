@@ -5,7 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-import ru.mts.config.Project;
+import config.Project;
 import ru.mts.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;

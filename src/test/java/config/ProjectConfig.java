@@ -1,4 +1,4 @@
-package ru.mts.config;
+package config;
 
 import org.aeonbits.owner.Config;
 
@@ -19,6 +19,9 @@ public interface ProjectConfig extends Config {
     String browserVersion();
     @Key("webRemoteUrl")
     String getRemoteUrl();
+    @Key("apiBaseUrl")
+    String apiBaseUrl();
+
 
 
 

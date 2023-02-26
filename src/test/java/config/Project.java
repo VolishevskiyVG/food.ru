@@ -1,4 +1,4 @@
-package ru.mts.config;
+package config;
 
 import org.aeonbits.owner.ConfigFactory;
 
