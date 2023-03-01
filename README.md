@@ -13,21 +13,21 @@
 > ➠ [Тест кейсы в Allure Test Ops](#-тест-кейсы-в-allure-test-ops)
 >
 > ➠ [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
-> 
+>
 > ➠ [Web сайт MTS.RU](#web-приложение-mts)
 >
 > ➠ [Покрытый функционал web приложения MTS](#покрытый-функционал-web-приложения-mts)
 >
 > ➠ [Технологический стек UI](#технологический-стек-ui)
-> 
+>
 > ➠ [Пример запуска теста в Selenoid](#-пример-запуска-теста-в-selenoid)
-> 
+>
 > ➠ [Api сервис REQRES.IN](#api-сервис-reqres)
-> 
+>
 > ➠ [Покрытый функционал api сервиса REQRES.IN](#покрытый-функционал-api-сервиса-reqres)
-> 
+>
 > ➠ [Технологический стек API](#технологический-стек-api)
-> 
+>
 > ➠ [Мобильное приложение Ozon](#мобильное-приложение-ozon)
 >
 > ➠ [Тестирование мобилльного приоложения с использованием сервиса Browserstack](#покрытый-функционал-мобильного-приложения)
@@ -35,9 +35,9 @@
 > ➠ [Технологический стек Mobile](#технологический-стек-mobile)
 >
 > ➠ [Пример запуска теста в Browserstack](#-пример-запуска-теста-в-browserstack)
-> 
+>
 > ➠ [Пример запуска теста в AndroidStudio](#-пример-запуска-теста-в-AndroidStudio)
- 
+
 ##  Общая информация о проекте
 
 ### Запуск тестов из терминала
@@ -70,21 +70,21 @@ gradle clean test
 > -DwebRemoteUrl <code>url remote сервиса</code>
 >
 > -DapiBaseUrl <code>url для запуска api тестов</code>
-> 
+>
 > -DappIos <code>IOS идентификатор приложения, загруженного в browserstack </code>
-> 
+>
 > -DdeviceIos <code>название девайса IOS </code>
 >
 > -Dos_versionIos <code>версия ОС </code>
-> 
+>
 > -DappAndroid <code>Android идентификатор приложения, загруженного в browserstack </code>
-> 
+>
 > -DdeviceAndroid <code>название девайса Android </code>
 >
 > -Dos_versionAndroid <code>версия ОС </code>
 >
 > -Durl <code>url стенда browserstack</code>
-> 
+>
 
 
 ### Удаленный запуск тестов
@@ -137,7 +137,7 @@ gradle clean test
 <img title="Allure_dashboard" src="readme_design/screens/Allure_dashboard.png">
 </p>
 
-## <img width="4%" title="Allure_testops" src="readme_design/logo/Allure_Test_Ops.svg"> Тест кейсы в Allure Test Ops
+### <img width="4%" title="Allure_testops" src="readme_design/logo/Allure_Test_Ops.svg"> Тест кейсы в Allure Test Ops
 
 <p align="center">
 <img title="Allure_testops" src="readme_design/screens/Allure_testops.png">
@@ -192,7 +192,7 @@ gradle clean test
 > В качестве библиотеки для модульного тестирования используется <code>JUnit 5</code>.
 >
 > <code>Jenkins</code> выполняет запуск тестов.
-> 
+>
 > После завершения прогона отправляются уведомления с помощью бота в <code>Telegram</code>.
 
 ## <img width="4%" title="Selenoid" src="readme_design/logo/Selenoid.svg"> Пример запуска теста в Selenoid
@@ -205,7 +205,7 @@ gradle clean test
 
 ##  Api сервис REQRES.IN
 
-###  Покрытый функционал api сервиса 
+###  Покрытый функционал api сервиса
 
 > Разработаны автотесты на <code>Api сервис</code>.
 ### Api
@@ -251,7 +251,7 @@ gradle clean test
 ## Тестирование мобилльного приоложения с использованием сервиса Browserstack
 
 
-> Разработаны автотесты для мобильного приложения 
+> Разработаны автотесты для мобильного приложения
 
 - [x] Проверка поиска в приложение Wikipedia
 - [x] Проверка поиска на IOS
@@ -282,7 +282,7 @@ gradle clean test
 > <code>Selenide и Appium</code> используются для управления мобильным устройством с помощью веб драйвера.
 >
 > В проверках есть локальный тест( запускается с помощью Android studio и эмулятора мобильного устройства), так и с помощью сервиса Browserstack, предоставляющего доступ к ферме с реальными мобильными устройствами
-> 
+>
 > <code>Allure Report</code> формирует отчет о запуске тестов.
 >
 > Для автоматизированной сборки проекта используется <code>Gradle</code>.
