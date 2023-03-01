@@ -137,7 +137,7 @@ gradle clean test
 <img title="Allure_dashboard" src="readme_design/screens/Allure_dashboard.png">
 </p>
 
-### <img width="4%" title="Allure_testops" src="readme_design/logo/Allure_Test_Ops.svg"> Тест кейсы в Allure Test Ops
+## <img width="4%" title="Allure_testops" src="readme_design/logo/Allure_Test_Ops.svg"> Тест кейсы в Allure Test Ops
 
 <p align="center">
 <img title="Allure_testops" src="readme_design/screens/Allure_testops.png">
