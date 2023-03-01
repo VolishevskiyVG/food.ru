@@ -1,5 +1,9 @@
 package moblie.tests.ios;
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -12,6 +16,9 @@ import static org.openqa.selenium.By.id;
 public class IosTest extends IosTestBase {
 
     @Test
+    @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Проверка поиска (ios)")
     void OutputTextTest() {
         step("Click Text Button", () -> {
             $(id("Text Button")).click();

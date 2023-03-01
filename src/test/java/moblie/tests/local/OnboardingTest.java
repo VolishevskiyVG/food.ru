@@ -1,6 +1,10 @@
 package moblie.tests.local;
 
 
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -13,6 +17,9 @@ import static org.openqa.selenium.By.id;
 
 public class OnboardingTest extends LocalTestBase {
     @Test
+    @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Прохождение онбординга")
     void onBoardingScreenTest() {
         step("Переход на главную страницу", () -> {
             $(id("org.wikipedia.alpha:id/primaryTextView")).shouldHave(text("The Free Encyclopedia\n" +

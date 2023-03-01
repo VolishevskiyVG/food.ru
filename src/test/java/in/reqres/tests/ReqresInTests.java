@@ -4,6 +4,8 @@ import in.reqres.models.CreateUserResponse;
 import in.reqres.models.RegisterUser;
 import in.reqres.models.Users;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ReqresInTests {
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Получение списка пользователей")
     void getUserListWithLombok() {
         given()
@@ -31,6 +34,7 @@ public class ReqresInTests {
 
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка наличия пользователя")
     void getSingleUserNotFound() {
         given()
@@ -43,6 +47,7 @@ public class ReqresInTests {
 
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("Создание пользователя")
     void createUserLombok() {
         CreateUserRequest body = new CreateUserRequest();
@@ -66,6 +71,7 @@ public class ReqresInTests {
 
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Обновление пользователя")
     void updateUserLombok() {
         CreateUserRequest body = new CreateUserRequest();
@@ -86,6 +92,7 @@ public class ReqresInTests {
 
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.CRITICAL)
     @DisplayName("Регистрация пользователя")
     void registerSuccessfulLombok() {
         RegisterUser body = new RegisterUser();
@@ -106,6 +113,7 @@ public class ReqresInTests {
 
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка id и email пользователя")
     void checkIdAndEmailOfFeaturedUser() {
         Users userResponse = given().spec(request)
@@ -122,6 +130,7 @@ public class ReqresInTests {
 
     @Test
     @Owner("v.volishevskiy")
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка email пользователя с помощью Groovy")
     public void checkEmailUsingGroovy() {
 

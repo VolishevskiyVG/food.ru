@@ -1,5 +1,6 @@
 package ru.mts.tests;
 
+import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
@@ -14,6 +15,7 @@ public class SearchProductTest extends TestBase {
     SearchPage searchPage = new SearchPage();
 
     @Test
+    @Owner("v.volishevskiy")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Поиск по сайту")
     public void testLogo() {
