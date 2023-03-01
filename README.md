@@ -14,7 +14,7 @@
 >
 > ➠ [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
 >
-> ➠ [Web сайта MTS.RU](#web-сайта-mts.ru)
+> ➠ [Web сайта MTS](#web-сайта-mts)
 >
 > ➠ [Покрытый функционал web приложения MTS](#покрытый-функционал-web-приложения-mts)
 >
@@ -153,7 +153,7 @@ gradle clean test
 <img title="Telegram_notifications" src="readme_design/screens/Telegram_notifications.png">
 </p>
 
-## Web сайта MTS.RU
+## Web сайта MTS
 
 ###  Покрытый функционал web приложения MTS
 
