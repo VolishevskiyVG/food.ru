@@ -11,6 +11,8 @@
 > ➠ [Отчет о результатах тестирования в Allure Report](#-главная-страница-allure-отчета)
 >
 > ➠ [Тест кейсы в Allure Test Ops](#-тест-кейсы-в-allure-test-ops)
+> 
+> ➠ [Интеграция с Jira](#-интеграция-с-jira)
 >
 > ➠ [Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
 >
@@ -136,9 +138,14 @@ gradle clean test
 </p>
 
 ### <img width="4%" title="Allure_testops" src="readme_design/logo/Allure_Test_Ops.svg"> Тест кейсы в Allure Test Ops
-
 <p align="center">
 <img title="Allure_testops" src="readme_design/screens/Allure_testops.png">
+</p>
+
+### <img width="4%" title="Allure_testops" src="readme_design/logo/jira.png"> Интеграция с Jira
+
+<p align="center">
+<img title="Allure_testops" src="readme_design/screens/Jira.png">
 </p>
 
 ## <img width="4%" title="Telegram" src="readme_design/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
