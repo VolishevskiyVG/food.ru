@@ -9,12 +9,12 @@ import org.junit.jupiter.params.provider.ValueSource;
 import ru.mts.pages.SearchPage;
 
 import static io.qameta.allure.Allure.step;
-
+@Owner("v.volishevskiy")
 public class SearchProductTest extends TestBase {
     SearchPage searchPage = new SearchPage();
 
 
-    @Owner("v.volishevskiy")
+
     @Severity(SeverityLevel.NORMAL)
     @ValueSource(strings ={"тариф"})
     @ParameterizedTest(name = "{0}")

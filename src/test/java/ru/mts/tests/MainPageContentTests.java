@@ -11,13 +11,11 @@ import ru.mts.pages.MainPage;
 
 
 import static io.qameta.allure.Allure.step;
-
+@Owner("v.volishevskiy")
 public class MainPageContentTests extends TestBase {
 
     MainPage mainPage = new MainPage();
-
     @Test
-    @Owner("v.volishevskiy")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка логотипа МТС на главной страницы")
     public void testLogo() {
@@ -29,7 +27,6 @@ public class MainPageContentTests extends TestBase {
     }
 
     @Severity(SeverityLevel.NORMAL)
-    @Owner("v.volishevskiy")
     @DisplayName("Проверить что на главной странице присутствуют хиты продаж")
     @ValueSource(strings = {"МТС Доступ", "НЕТАРИФ", "Тарифище"})
     @ParameterizedTest(name = "\"{0}\"")
@@ -42,7 +39,6 @@ public class MainPageContentTests extends TestBase {
     }
 
     @Test
-    @Owner("v.volishevskiy")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверить, что происходит переход в Мтс Доступ из главной страницы")
     public void goToPageNew() {
@@ -57,7 +53,6 @@ public class MainPageContentTests extends TestBase {
     }
 
     @Test
-    @Owner("v.volishevskiy")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Отображение Программы привилегий в выпадающем списке Комбо ")
     public void menuPrivilege() {
@@ -72,7 +67,6 @@ public class MainPageContentTests extends TestBase {
     }
 
     @Test
-    @Owner("v.volishevskiy")
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверить, что происходит перелистывание контента по слайдеру")
     public void clickCover() {
