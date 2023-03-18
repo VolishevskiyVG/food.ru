@@ -17,12 +17,7 @@ public class MainPage {
             mainMenuPrivilege = $(".header__submenu-inner"),
             loaderSlider=$(".cover-slider__loader");
 
-    public MainPage personalPage() {
-        open("/personal");
-        return this;
-    }
-
-    public MainPage checkLogo() {
+       public MainPage checkLogo() {
         headerLogo.should(appear);
         return this;
     }
@@ -32,7 +27,7 @@ public class MainPage {
         return this;
     }
 
-    public MainPage cardMtsAccess() {
+    public MainPage clickToCard() {
         cardContent.click();
         return this;
     }
@@ -41,7 +36,7 @@ public class MainPage {
         cardContentAccess.shouldHave(text("МТС Доступ"));
         return this;
     }
-    public MainPage MenuCombo() {
+    public MainPage menuCombo() {
         mainMenuCombo.click();
         return this;
     }

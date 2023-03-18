@@ -21,9 +21,6 @@ public class MainPageContentTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверка логотипа МТС на главной страницы")
     public void testLogo() {
-        step("Открыть персональную страницу МТС", () -> {
-            mainPage.personalPage();
-        });
         step("Проверить что логотип МТС присутствует", () -> {
             mainPage.checkLogo();
         });
@@ -37,9 +34,6 @@ public class MainPageContentTests extends TestBase {
     @ValueSource(strings = {"МТС Доступ", "НЕТАРИФ", "Тарифище"})
     @ParameterizedTest(name = "\"{0}\"")
     public void testHit(String hit) {
-        step("Открыть персональную страницу МТС", () -> {
-            mainPage.personalPage();
-        });
         step("Проверить, что есть блок Хиты продаж", () -> {
             mainPage.checkBestsellers(hit);
         });
@@ -52,11 +46,8 @@ public class MainPageContentTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверить, что происходит переход в Мтс Доступ из главной страницы")
     public void goToPageNew() {
-        step("Открыть персональную страницу МТС", () -> {
-            mainPage.personalPage();
-        });
         step("Нажать на блок МТС Доступ", () -> {
-            mainPage.cardMtsAccess();
+            mainPage.clickToCard();
         });
         step("Проверить, что осуществился переход на МТС Доступ", () -> {
             mainPage.checkMtsAccess();
@@ -70,11 +61,8 @@ public class MainPageContentTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Отображение Программы привилегий в выпадающем списке Комбо ")
     public void menuPrivilege() {
-        step("Открыть персональную страницу МТС", () -> {
-            mainPage.personalPage();
-        });
         step("Нажать на выпадающий список Комбо", () -> {
-            mainPage.MenuCombo();
+            mainPage.menuCombo();
         });
         step("Проверить, что отображается Программы привилегий", () -> {
             mainPage.checkMenuPrivilege();
@@ -88,9 +76,6 @@ public class MainPageContentTests extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("Проверить, что происходит перелистывание контента по слайдеру")
     public void clickCover() {
-        step("Открыть персональную страницу МТС", () -> {
-            mainPage.personalPage();
-        });
         step("Проверка работы кнопки слайдера", () -> {
             mainPage.checkLoaderSlider();
         });

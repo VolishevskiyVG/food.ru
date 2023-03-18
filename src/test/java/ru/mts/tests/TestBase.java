@@ -8,16 +8,16 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import config.Project;
 import ru.mts.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import ru.mts.pages.PersonPage;
+
+import static io.qameta.allure.Allure.step;
 
 public class TestBase {
     @BeforeAll
     static void beforeAll() {
-
-
         Configuration.baseUrl = Project.config.baseUrl();
         Configuration.browserSize = Project.config.browserSize();
         Configuration.browser = Project.config.browser();
@@ -32,15 +32,16 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
     }
-
-
-    @BeforeEach
+        @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+            PersonPage personPage = new PersonPage();
+            step("Открыть персональную страницу МТС", () -> {
+                personPage.openPage();
+
+            });
 
     }
-
-
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
@@ -48,10 +49,5 @@ public class TestBase {
         Attach.browserConsoleLogs();
         Attach.addVideo();
         Selenide.closeWebDriver();
-    }
-
-    @AfterAll
-    public static void afterAllTest() {
-
     }
 }

@@ -12,13 +12,13 @@ public class SearchPage {
             searchValue = $("input[type='text']"),
     checkSearch = $(".mts-search-header");
 
-    public SearchPage searchProduct() {
+    public SearchPage searchProduct(String product) {
         searchInput.click();
-        searchValue.setValue("тариф").pressEnter();
+        searchValue.setValue(product).pressEnter();
         return this;
     }
-    public SearchPage checkSearchProduct() {
-        checkSearch.shouldHave(text("Поиск по сайту"));
+    public SearchPage checkSearchProduct(String check) {
+        checkSearch.shouldHave(text(check));
         return this;
     }
 }
